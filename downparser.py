@@ -13,7 +13,7 @@ class DownloadParser:
 
     def parse(self, ids):
         self.bar = ProgressBar(total=len(ids))
-        pool = ThreadPool(256)
+        pool = ThreadPool(64)
         pool.map(self.parse_page, ids)
         pool.close()
         pool.join()
@@ -22,11 +22,11 @@ class DownloadParser:
         User_Agent = 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0'
         header = {}
         header['User-Agent'] = User_Agent
-        prx = {'http':'http://121.40.199.105:80',
-               'http':'http://120.26.140.95:81',
-               'http':'http://61.130.97.212:8099',
-               'http':'http://42.81.11.22:8088',
-               'http':'http://124.238.235.135:81'}
+        prx = {'http':'http://111.9.116.225:8080',
+               'http':'http://113.140.43.136:80',
+               'http':'http://117.90.2.178:9000',
+               'http':'http://182.129.240.150:9000',
+               'http':'http://111.155.116.196:8123'}
         try:
             resp = requests.get(self.entry_url+str(ID)).content
             if resp is None:

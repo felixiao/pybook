@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.parse(pages=parseRange)
 
     for p in parser.get_page():
-        pages.append(i)
+        pages.append(p)
 
     #加上之前检索出错的页面
     for i in parser.get_data():
