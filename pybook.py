@@ -43,7 +43,8 @@ if __name__ == '__main__':
     downParser.parse(error)
 
     for d in downParser.get_data():
-        books.append(d)
+        if d not in books:
+            books.append(d)
     # 保存本信息
     with io.open('./data/books.json', 'w', encoding='utf8') as outfile:
         data = json.dumps(books, indent = 4, ensure_ascii=False)
