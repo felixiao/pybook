@@ -3,8 +3,8 @@ import sys, requests
 from bs4 import BeautifulSoup
 from multiprocessing.dummy import Pool as ThreadPool
 from progressbar import ProgressBar
-class DownloadParser:
-    def __init__(self,url='http://mebook.cc/download.php?id='):
+class DownloadParserAlt:
+    def __init__(self,url='http://mebook.cc/'):
         self.session = requests.session()
         self.entry_url = url
         self.datas = []
@@ -28,7 +28,7 @@ class DownloadParser:
                'http':'http://182.129.240.150:9000',
                'http':'http://111.155.116.196:8123'}
         try:
-            resp = requests.get(self.entry_url+str(ID)).content
+            resp = requests.get(self.entry_url+str(ID)+'.html').content
             if resp is None:
                 self.errors.append(ID)
                 self.bar.move()

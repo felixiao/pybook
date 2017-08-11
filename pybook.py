@@ -25,7 +25,7 @@ if __name__ == '__main__':
         print('FileNotFoundError')
 
     # 检索页面范围去除之前已经检索过的页面
-    parseRange=list(range(1,432))
+    parseRange=list(range(1,433))
     for i in pages:
         parseRange.remove(i)
     # 分析页面
